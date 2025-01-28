@@ -1,0 +1,14 @@
+The solution is to ensure the parent element has explicitly defined dimensions before using `calc()` for child element sizing. For example:
+
+```css
+.parent {
+  width: 500px;
+  height: 300px;
+}
+
+.element {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+```
+Now, `100%` within `calc()` correctly refers to the parent's defined dimensions of 500px and 300px, resulting in predictable and accurate sizes for `.element`.
