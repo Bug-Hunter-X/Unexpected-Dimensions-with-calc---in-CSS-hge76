@@ -1,0 +1,6 @@
+The CSS property `calc()` is used incorrectly in the following code snippet:  ```css
+.element {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+``` This code attempts to set both width and height to be 100% minus 20px. However, in this context, `100%` is relative to the parent element. If the parent element has no specific dimensions, or has dimensions set with other relative units such as `em` or `rem`, the `calc()` function will not produce the expected results.  The percentage calculation within `calc()` would be based on an undefined or relative value, resulting in unpredictable sizes. 
